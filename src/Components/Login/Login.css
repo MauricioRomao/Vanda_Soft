@@ -1,0 +1,234 @@
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Mona Sans', 'Segoe UI', sans-serif;
+  background-color: #e5e5e5;
+}
+
+/* Layout geral */
+.login-container {
+  display: flex;
+  height: 100vh;
+}
+
+/* Coluna esquerda */
+.login-left {
+  flex: 1;
+  background-color: #fff;
+  padding: 60px 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.login-logo {
+  font-size: 22px;
+  font-weight: 600;
+  color: #003344;
+  margin-bottom: 40px;
+}
+
+.login-left h2 {
+  font-size: 24px;
+  color: #000;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.login-left p {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 30px;
+}
+
+/* Formulário */
+.login-form label {
+  font-size: 14px;
+  color: #222;
+  margin-bottom: 6px;
+  display: block;
+}
+
+.login-form input {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid #e0e0e0;
+  background-color: #ffffff;
+  border-radius: 10px;
+  font-size: 14px;
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.login-form input:focus {
+  outline: none;
+  border-color: #003344;
+  box-shadow: 0 0 0 2px rgba(0, 51, 68, 0.1);
+}
+
+.password-field {
+  position: relative;
+}
+
+.toggle-visibility {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+/* Opções */
+.login-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  margin-bottom: 20px;
+  color: #555;
+}
+
+.login-options a {
+  text-decoration: none;
+  color: #003344;
+}
+
+/* Botão login */
+.login-button {
+  width: 100%;
+  padding: 12px;
+  background-color: #003344;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+.login-button:hover {
+  background-color: #00475b;
+}
+
+/* Divider */
+.divider {
+  text-align: center;
+  font-size: 14px;
+  color: #999;
+  position: relative;
+  margin: 20px 0;
+}
+
+.divider::before,
+.divider::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 40%;
+  height: 1px;
+  background: #ccc;
+}
+
+.divider::before {
+  left: 0;
+}
+
+.divider::after {
+  right: 0;
+}
+
+/* Social login */
+.social-login {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.google-button,
+.facebook-button {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #fff;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+/* Link cadastro */
+.signup-link {
+  font-size: 14px;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.signup-link a {
+  color: #003344;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+/* Coluna direita */
+.login-right {
+  flex: 1;
+  background-color: #003344;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 80px 60px;
+  position: relative;
+  overflow: hidden;
+  font-family: "Mona Sans", "Segoe UI", sans-serif;
+}
+
+.login-right .info {
+  max-width: 420px;
+  z-index: 2;
+}
+
+.login-right .info h2 {
+  font-size: 26px;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.login-right .info p {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #e5e5e5;
+}
+
+/* Mockup */
+.mockup {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background-image: url('/anisio.webp'); /* Substitua com o caminho correto */
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 70%;
+  height: 300px;
+  z-index: 1;
+}
+
+/* Background quadriculado */
+.login-right::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 260px;
+  height: 260px;
+  background-image: radial-gradient(#ffffff20 1px, transparent 1px);
+  background-size: 20px 20px;
+  z-index: 0;
+}
