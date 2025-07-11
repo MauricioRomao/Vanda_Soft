@@ -1,9 +1,21 @@
 import React, { useState } from "react";
 import "./styles.css";
 
-const contacts = [{ name: "Contact 1" }, { name: "Contact 2" }];
+const contacts = {
+  label: "Contacts",
+  data: [
+    { id: 0, Patient_name: "92988798" },
+    { id: 1, Patient_name: "928798792" },
+  ],
+};
 
-const documents = [{ name: "Document 1" }, { name: "Document 2" }];
+const documents = {
+  label: "Documents",
+  data: [
+    { id: 0, Patient_name: "André" },
+    { id: 1, Patient_name: "João" },
+  ],
+};
 
 const Index = () => {
   const [currentData, setCurrentData] = useState(contacts);
@@ -72,7 +84,7 @@ const Index = () => {
 
         <div className="list-cards">
           <div className="card">
-            <div class="circle-progress"></div>
+            <div className="circle-progress"></div>
 
             <h3>16 %</h3>
             <p>Unassigned</p>
@@ -81,7 +93,7 @@ const Index = () => {
           </div>
 
           <div className="card">
-            <div class="circle-progress"></div>
+            <div className="circle-progress"></div>
 
             <h3>16 %</h3>
             <p>Unassigned</p>
@@ -90,7 +102,7 @@ const Index = () => {
           </div>
 
           <div className="card">
-            <div class="circle-progress"></div>
+            <div className="circle-progress"></div>
 
             <h3>16 %</h3>
             <p>Unassigned</p>
@@ -99,7 +111,7 @@ const Index = () => {
           </div>
 
           <div className="card">
-            <div class="circle-progress"></div>
+            <div className="circle-progress"></div>
 
             <h3>16 %</h3>
             <p>Unassigned</p>
@@ -110,7 +122,7 @@ const Index = () => {
 
         <div className="section-documents">
           <div className="header-documents">
-            <h2>{currentData[0].name}</h2>
+            <h2>{currentData.label}</h2>
 
             <div className="side-documents">
               <div className="status">
@@ -145,30 +157,20 @@ const Index = () => {
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>
-                  <input type="checkbox" />
-                </td>
-                <td>Alfreds Futterkiste</td>
-                <td>07/11/2005</td>
-                <td>521</td>
-                <td>Alfreds Futterkiste</td>
-                <td>Maria Anders</td>
-                <td>8kjhkjhk</td>
-                <td>see</td>
-              </tr>
-              <tr>
-                <td>
-                  <input type="checkbox" />
-                </td>
-                <td>Alfreds Futterkiste</td>
-                <td>07/11/2005</td>
-                <td>521</td>
-                <td>Alfreds Futterkiste</td>
-                <td>Maria Anders</td>
-                <td>8kjhkjhk</td>
-                <td>see</td>
-              </tr>
+              {currentData.data.map(({ id, Patient_name }) => (
+                <tr key={id}>
+                  <td>
+                    <input type="checkbox" />
+                  </td>
+                  <td>{Patient_name}</td>
+                  <td>07/11/2005</td>
+                  <td>521</td>
+                  <td>Alfreds Futterkiste</td>
+                  <td>Maria Anders</td>
+                  <td>8kjhkjhk</td>
+                  <td>see</td>
+                </tr>
+              ))}
             </tbody>
           </table>
         </div>
